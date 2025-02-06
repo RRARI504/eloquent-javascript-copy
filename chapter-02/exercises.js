@@ -26,9 +26,23 @@ LOGS =>
 
 */
 
-function triangles() {
+function triangles(number) { //function called triangles that takes in a parameter number
   
+    // Loop through each level of the triangle
+    for (let i = 1; i <= number; i++) { //for loop that iterated through the number paramete
+        let hashTag = ''; //declaration that is equal to an empty string to save the 
+        
+        // Build the string for the current level
+        for (let j = 0; j < i; j++) {
+            hashTag += '#';
+        }
+        
+        // Log the stars for this level
+        console.log(hashTag);
+    }
 }
+
+triangles(5);
 
 
 ////////////////////////////////////////////////////////////////////////////////
