@@ -29,7 +29,7 @@ LOGS =>
 function triangles(number) { //function called triangles that takes in a parameter number
   
     // Loop through each level of the triangle
-    for (let i = 1; i <= number; i++) { //for loop that iterated through the number paramete
+    for (let i = 1; i <= number; i++) { //for loop that iterated through the number parameter
         let hashTag = ''; //declaration that is equal to an empty string to save the 
         
         // Build the string for the current level
@@ -62,6 +62,25 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
+
+ for(var i = start; i <= end; i++)
+
+ if(i % 3 === 0 && i % 5 === 0 ){
+  console.log('fizzbuzz')
+
+ } else if( i % 3 === 0) {
+  console.log('fizz')
+
+ }else if( i % 5 === 0){
+  console.log('buzz')
+
+ } else{
+  console.log(i);
+ }
+
+  
+
+  
   
 }
 
