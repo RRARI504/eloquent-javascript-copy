@@ -118,9 +118,9 @@ function drawChessboard(x) {
   let chessboard = ''; //empty string to hold values 
 
   for(var i = 0; i < x; i++){
-    for(var j = 0; j < x; i++){
+    for(var j = 0; j < x; j++){
       if((i + j) % 2 === 0){
-        chessboard += '';
+        chessboard += ' ';
 
       }else {
         chessboard += '#'
@@ -130,11 +130,15 @@ function drawChessboard(x) {
       chessboard += "\n"
 
   }
+  console.log(chessboard) //had to log the string to check the structure first.
 
     return chessboard;
 
-
+    
 }
+
+console.log(drawChessboard(4))
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
