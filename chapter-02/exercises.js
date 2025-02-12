@@ -115,6 +115,23 @@ LOGS =>
 */
 
 function drawChessboard(x) {
+  let chessboard = ''; //empty string to hold values 
+
+  for(var i = 0; i < x; i++){
+    for(var j = 0; j < x; i++){
+      if((i + j) % 2 === 0){
+        chessboard += '';
+
+      }else {
+        chessboard += '#'
+      }
+    }
+
+      chessboard += "\n"
+
+  }
+
+    return chessboard;
 
 
 }
