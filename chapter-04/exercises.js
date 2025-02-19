@@ -49,7 +49,16 @@ function sum(array) {
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArray() {
+function reverseArray(array) {
+
+
+  return array.reduce(function(acc, current){
+    acc.unshift(current)
+
+    return acc;
+
+  }, []);//start w/ empty array as accumulator 
+ 
 
 }
 
