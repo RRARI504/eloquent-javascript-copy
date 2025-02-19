@@ -2,35 +2,47 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range(start, end) {
+function range(start, end, step) {
   let output = [];
-  
-  
-  for(let i = start; i <= end; i++){
-    output.push(i)
+  if(step === undefined){
+    step = 1;
   }
+
   if(start === end){
     return [];
   }
-  
+
+  if(step > 0){
+    for(let i = start; i <= end; i += step){
+      output.push(i)
+
+    }
+
+  }else{
+    for(let i = start; i >= end; i += step){
+      output.push(i)
+
+    }
+  }
   return output;
 }
-console.log(range(1,10))
+
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function sum(array) {
-  
-  let strt = 0;
 
-  for(let i = 0; i <= array.length; i++){
-    sum += array[i]
+  if(array.length === 0 ){
+    return 0;
 
   }
-  return strt;
+  
+  return array.reduce(function(acc, current){
 
+    return acc + current
 
+  }, 0)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
