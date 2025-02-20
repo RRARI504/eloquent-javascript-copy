@@ -64,9 +64,27 @@ function reverseArray(array) {
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
+//I: array 
+//O: an array of numbers reversed
+function reverseArrayInPlace(array) {
+
+  let reverse = [];
+  for(let i = array.length - 1; i >= 0; i--){ 
+    //loop through the array starting from the end to the beginning
+
+    reverse.push(array[i]) //push the current iteration to the reverse array
+
+  }
+
+  for(let i = 0; i < array.length; i++){ //modify the orginal array by setting
+    //it equal to the the reversed iteration
+    array[i] = reverse[i]
+
+  }
+
+  
 
 }
 
