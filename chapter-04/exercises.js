@@ -92,17 +92,64 @@ function reverseArrayInPlace(array) {
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
+function arrayToList(array) {
+  let rest = null;
+
+  for(let i = array.length - 1; i >= 0; i--){
+    //so array[i] will give the values of the array moving backwards
+    rest = {value: array[i], rest: rest}; //reassigning rest to an object
+                            //here a key on the value of rest is being assigned to rest 
+                            //which at the first iteration is null 
+  }
+  return rest
 
 }
+//how this works
+
+//invoke the function ([10, 20, 30])
+//rest = null
+//for loop that starts at end
+//i = 2 
+//rest = {value: 30, rest: null  }//value is equal to current item in the array 
+//i = 1
+//rest = {value: 20, rest: {value: 30, rest: null  }  }
+//i = 0 
+//rest = {value: 10, rest: {value: 20, rest: } value: 30, rest null } } }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
+function listToArray(list, array=[]) {
+  //since we are trying to return a complex piece of data, must make a default parameter
+  //this creates the value in the recursion which will eventually be the data being retured
+
+  //base
+  if(list.rest === null){
+    array.push(list.value)
+
+    return array; //when the base case is hit it just needs to return the array 
+  }
+
+
+  //recursion
+array.push(list.value)
+
+return listToArray(list.rest, array)
 
 }
+
+//invoke listToArray(list1)
+//the first thing to happen is the base case is going to be hit BASE//false becasue we are not close to the solution
+//then we hit the RECURSION need to grab the value of 10 from the input and put it into the array
+//so, array.push(10)
+//then it returns the object at the rest property - listToArray()
+//BASE //FALSE
+//hits the RECURSION again
+//so, array.push(20)//the next layer of the list 
+//return listToArray() at the second rest 
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // prepend /////////////////////////////////////////////////////////////////////
