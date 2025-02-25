@@ -189,8 +189,32 @@ if(list === null){
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
-  
+function deepEqual(x, y) {
+
+  if(typeof x !== 'object' && typeof y !== 'object'){
+    return x === y;
+  }
+
+  if(typeof x !== 'object' || typeof y !== 'object'){
+    return false;
+
+  }
+  let xKeys = Object.keys(x)
+  let yKeys = Object.keys(y)
+
+  if(xKeys.length !== yKeys.length){
+    return false;
+
+  }
+
+  for(let i = 0; i < xKeys.length; i++ ){
+    if(!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
+      return false;
+
+    }
+
+  }
+  return true;
 
 }
 
